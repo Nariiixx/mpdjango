@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/produto/css/cadastro.css">
+  </head>
+  <body>
+    <h1>cadastro</h1>
+    <div class="inicio">
+      <a href="{% url 'phome'%}">inicio</a>
+    </div>
+    <div class="forme" >
+      <form action="" method="post">
+      {% csrf_token %}
+      <div class="produto">
+      <label>nome do produto:</label>
+      <p>
+      <input
+        type="text"
+        id="nome_do_produto"
+        name="nome_do_produto"
+        placeholder="digite o nome do produto..."
+        required
+        />
+      </div>
+      <div class="codigo">
+      <label>número do codigo de barra:</label>
+      <p>
+      <input
+        type="number"
+        id="codigo_de_barra"
+        name="codigo_de_barra"
+        placeholder="número do codigo..."
+        required
+      />
+      </div>
+      <div class="quantidade">
+      <label>quantidade total:</label>
+      <p>
+      <input
+        type="number"
+        id="quantidade_total"
+        name="quantidade_total"
+        placeholder="quantidade..."
+        required
+      />
+      </div>
+      <div class="endereco">
+      <label>
+        qual o endereço do item (exemplo:localizado no corredor 7,</label><br/><label> coluna 9,
+        nivel 2 e vão 3, terá o endereçamento de 7-9-2-3):
+      </label>
+      <p>
+        <input
+          type="number"
+          id="localizacao"
+          name="localizacao"
+          placeholder="digite nessa ordem..."
+          required
+        />
+      </div>
+      <div class="botao">
+        <input type="submit" value="enviar" />
+      </div>
+      </form>
+    </div>
+
+    <script src="" async defer></script>
+  </body>
+</html>

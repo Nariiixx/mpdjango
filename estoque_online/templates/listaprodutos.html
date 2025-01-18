@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de produtos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/produto/css/listaprodutos.css">
+</head>
+<body>
+    <h1>lista de produtos</h1>
+    <table border="3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Codigo de barra</th>
+                <th>Estoque</th>
+                <th>localização</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos  %}
+                <tr>
+                    <td>{{ produto.id }}</td>
+                    <td>{{ produto.nome_do_produto}}</td>
+                    <td>{{produto.codigo_de_barra}}</td>
+                    <td>{{ produto.quantidade_total }}</td>
+                    <td>{{ produto.localizacao }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Nenhum produto encontrado.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

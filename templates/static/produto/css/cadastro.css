@@ -1,0 +1,79 @@
+
+.afacad-flux-<uniquifier> {
+    font-optical-sizing: auto;
+    font-family: "Afacad Flux", serif;
+    font-style: normal;
+    font-weight: <weight>;
+    font-variation-settings:
+    "slnt" 0;
+}
+form{
+    width: 50%; /* Largura do formulário */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    border: 2px solid #251819; /* Cria a borda */
+    border-radius: 10px; /* Arredonda os cantos */
+    background-color: #ebc83a /* Fundo claro */
+    padding: 30px; /* Espaçamento interno */
+}
+
+body{
+font-family: "Afacad Flux", serif;
+font-weight: 400;
+font-style: normal;
+background:#ebc83a;
+}
+.inicio{
+    text-align:center;
+    margin-bottom:50px;
+}
+h1{
+    color:#251819;
+    font-size:50px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    margin-bottom:30px;
+}
+a{
+    text-decoration: none;
+    color: #251819;
+    cursor: pointer;
+    transition:transform 0.3s ease;
+    padding:5px 10px;
+    margin-bottom:50px;
+}
+a:hover{
+    color:#f21f26;
+    border: 2px solid #251819;
+    border-radius:5px;
+    background-color: #251819;
+}
+.produto, .codigo, .quantidade, .endereco{
+    font-size:25px;
+    color:#251819;
+    text-align:center;
+    margin-bottom:60px;
+}
+input{
+    margin-top:10px;
+    color:#ebc83a;
+    background-color:#251819;
+    font-size:15px;
+    border: 2px solid #251819;
+    border-radius:5px;
+    text-align:center;
+}
+p{
+    margin-top:10px;
+}
+input::placeholder{
+    color:#ebc83a;
+}
+.botao{
+    text-align:center;
+    margin-bottom:50px;
+}
+input[type="submit"]:hover{
+    background-color: #251819;
+    color:#73b295;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title></title>
+      <meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/static/produto/css/pagina_inicial.css">
+    </head>
+    <body>
+      <h1>Estoque online</h1>
+      <div class="cadastro">
+        <a href="{% url 'pcadastro'%}">cadastro</a>
+      </div>
+      <div class="atualizacao">
+        <a href="{% url 'atualizar'%}">atualizacao</a>
+      </div>
+      <div class="rastreamento">
+        <a href="{% url 'localizar'%}">rastreamento</a>
+      </div>
+      <div class="lista">
+        <a href="{% url 'lista_de_produto'%}">lista de produtos</a>
+      </div>
+      <div class="relatorio">
+        <a href="{% url 'relatorio'%}">relatorio</a>
+      </div>
+    </body>
+  </html>
+</html>

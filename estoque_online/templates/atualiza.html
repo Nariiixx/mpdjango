@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atualizaçao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/produto/css/atualiza.css">
+</head>
+<body>
+<h1>editando um produto.</h1>
+<div class="inicio">
+    <a href="{% url 'phome'%}">inicio</a>
+</div>
+<h2>vamos adicionar algumas informação para encontra o produto que irá ser editado</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <div>
+        <label>id do produto:</label>
+        <p>
+        <input
+        type="number"
+        id="id_do_produto"
+        name="id_do_produto"
+        placeholder="id..."
+        required
+        />
+    </div>
+    <div>
+        <label>nome_do_produto</label>
+        <p>
+        <input
+        type="text"
+        id="nome_do_produto"
+        name="nome_do_produto"
+        placeholder="nome do produto"
+        />
+    </div>
+    <div>
+        <label>numero do codigo de barra</label>
+        <p>
+        <input
+        type="number"
+        id="codigo_de_barra"
+        name="codigo_de_barra"
+        placeholder="numero do codigo de barra"
+        />
+    </div>
+    <div>
+        <label>quantidade total</label>
+        <br>
+        <input
+        type="number"
+        id="quantidade_total"
+        name="quantidade_total"
+        placeholder="numero do codigo de barra"
+        />
+    </div>
+    <div>
+        <label>localização</label>
+        <p>
+        <input
+        type="number"
+        id="localizacao"
+        name="localizacao"
+        placeholder="numero do codigo de barra"
+        />
+    </div>
+    <input type="submit" value="enviar"/>
+</body>
+</html>

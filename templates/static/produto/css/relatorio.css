@@ -1,0 +1,14 @@
+.afacad-flux-<uniquifier> {
+    font-optical-sizing: auto;
+    font-family: "Afacad Flux", serif;
+    font-style: normal;
+    font-weight: <weight>;
+    font-variation-settings:
+    "slnt" 0;
+}
+body{
+font-family: "Afacad Flux", serif;
+font-weight: 400;
+font-style: normal;
+background:#f19601;
+}
