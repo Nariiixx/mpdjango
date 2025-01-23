@@ -4,5 +4,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('est/', include('estoque_online.urls'))
+    path('https://nariiixx.github.io/mpdjango/', include('estoque_online.urls'))
 ]
