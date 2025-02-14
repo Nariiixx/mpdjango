@@ -8,7 +8,7 @@
     "slnt" 0;
 }
 form{
-    width: 50%; /* Largura do formulário */
+    width: 75%; /* Largura do formulário */
     margin: 20px auto; /* Centraliza horizontalmente */
     border: 2px solid #251819; /* Cria a borda */
     border-radius: 10px; /* Arredonda os cantos */
@@ -43,13 +43,13 @@ a{
     margin-bottom:50px;
 }
 a:hover{
-    color:#f21f26;
+    color:#ebc83a;
     border: 2px solid #251819;
     border-radius:5px;
     background-color: #251819;
 }
 .produto, .codigo, .quantidade, .endereco{
-    font-size:25px;
+    font-size:20px;
     color:#251819;
     text-align:center;
     margin-bottom:60px;
@@ -62,6 +62,7 @@ input{
     border: 2px solid #251819;
     border-radius:5px;
     text-align:center;
+    width: 50%;
 }
 p{
     margin-top:10px;

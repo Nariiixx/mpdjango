@@ -15,7 +15,7 @@
 <h2>vamos adicionar algumas informação para encontra o produto que irá ser editado</h2>
 <form action="" method="post">
     {% csrf_token %}
-    <div>
+    <div class="idproduto">
         <label>id do produto:</label>
         <p>
         <input
@@ -26,8 +26,8 @@
         required
         />
     </div>
-    <div>
-        <label>nome_do_produto</label>
+    <div class="nome_do_produto">
+        <label>nome do produto</label>
         <p>
         <input
         type="text"
@@ -36,7 +36,7 @@
         placeholder="nome do produto"
         />
     </div>
-    <div>
+    <div class="codigo_de_barra">
         <label>numero do codigo de barra</label>
         <p>
         <input
@@ -46,26 +46,25 @@
         placeholder="numero do codigo de barra"
         />
     </div>
-    <div>
+    <div class="quantidade_total">
         <label>quantidade total</label>
         <br>
         <input
         type="number"
         id="quantidade_total"
         name="quantidade_total"
-        placeholder="numero do codigo de barra"
+        placeholder="quantidade"
         />
     </div>
-    <div>
+    <div class="localizacao">
         <label>localização</label>
         <p>
         <input
         type="number"
         id="localizacao"
         name="localizacao"
-        placeholder="numero do codigo de barra"
+        placeholder="localização"
         />
     </div>
     <input type="submit" value="enviar"/>
 </body>
-</html>
