@@ -9,8 +9,11 @@
 </head>
 <body>
     <h1>Relatório de Estoque</h1>
-
-    <h2>Produto com Mais Estoque</h2>
+    <div class="inicio">
+        <a href="{% url 'phome'%}">inicio</a>
+    </div>
+    <div class="div">
+    <h3>Produto com Mais Estoque</h2>
     {% if quantidademaior %}
         <p>Nome: {{ quantidademaior.nome_do_produto }}</p>
         <p>Quantidade em Estoque: {{ quantidademaior.quantidade_total }}</p>
@@ -18,12 +21,13 @@
         <p>Não há produtos no estoque.</p>
     {% endif %}
 
-    <h2>Produto com Menos Estoque</h2>
+    <h3>Produto com Menos Estoque</h2>
     {% if quantidademenor %}
         <p>Nome: {{ quantidademenor.nome_do_produto }}</p>
         <p>Quantidade em Estoque: {{ quantidademenor.quantidade_total }}</p>
     {% else %}
         <p>Não há produtos no estoque.</p>
     {% endif %}
+    </div>
 </body>
 </html>

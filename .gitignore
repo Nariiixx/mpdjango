@@ -1,0 +1,15 @@
+# Ignorar a pasta de ambiente virtual
+venv/
+
+# Ignorar o diretório de contêiner Docker
+.docker/
+
+# Ignorar dependências do Node.js
+node_modules/
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de log
+*.log

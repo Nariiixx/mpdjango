@@ -10,4 +10,64 @@ body{
 font-family: "Afacad Flux", serif;
 font-weight: 400;
 font-style: normal;
+background:#73b295;
+}
+a{
+    text-decoration: none;
+    color: #251819;
+    cursor: pointer;
+    transition:transform 0.3s ease;
+    padding:5px 10px;
+    margin-bottom:50px;
+    text-align:center;   
+}
+a:hover{
+    color:#73b295;
+    border: 2px solid #251819;
+    border-radius:5px;
+    background-color: #251819;
+}
+.inicio{
+    text-align:center;
+    margin-bottom:50px;
+}
+h1{
+    color:#251819;
+    font-size:50px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    margin-bottom:30px;
+}
+.formulario{
+    text-align: center;
+    width: 75%; /* Largura do formulário */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    border: 2px solid #251819; /* Cria a borda */
+    border-radius: 10px; /* Arredonda os cantos */
+    background-color:rgb(74, 145, 112); /* Fundo claro */
+    padding: 30px; /* Espaçamento interno */
+}
+label{
+    color:#251819;
+    font-size:17px;
+    text-align:center;  
+}
+input{
+    margin-top:10px;
+    color:#251819;
+    background-color:#73b295;
+    width: 75%;
+    border-radius:5px;
+    text-align:center;
+}
+form{
+    text-align: center;
+    width: 50%; /* Largura do formulário */
+    margin: 12px auto; /* Centraliza horizontalmente */
+    padding: 1px; /* Espaçamento interno */
+}
+input::placeholder{
+    text-align:center;
+    color:#251819;
 }

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 91275085  # Troque pela sua senha
+      MYSQL_DATABASE: pribanco  # O mesmo nome do banco de dados que você configurou no settings.py
+      MYSQL_USER: penari  # Nome do usuário para o MySQL
+      MYSQL_PASSWORD: 1234  # Senha para o usuário do MySQL
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  web:
+    build: .
+    container_name: django-web
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+volumes:
+  mysql_data:
+
+networks:
+  app-network:
+    driver: bridge

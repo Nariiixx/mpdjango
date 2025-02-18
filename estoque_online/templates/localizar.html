@@ -9,8 +9,10 @@
 </head>
 <body>
 <h1>localização</h1>
-<br>
-<br>
+<div class="inicio">
+<a href="{% url 'phome'%}">inicio</a>
+</div>
+<div class="formulario">
 <label>digite o id do produto para localizar o produto</label>
 <form action="" method="post">
     {% csrf_token %}
@@ -20,8 +22,10 @@
     name="id_do_produto"
     placeholder="id do produto"
     required/>
+    <br/>
     <input type="submit" value="localizar"/>
 </form>
+</div>
 <h2></h2>
 <h4>*a localização do produto é organizada em corredor, coluna,
     nivel e vão, terá o endereçamento de xxxx</h4>

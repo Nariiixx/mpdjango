@@ -9,31 +9,36 @@
 </head>
 <body>
     <h1>lista de produtos</h1>
-    <table border="3">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Codigo de barra</th>
-                <th>Estoque</th>
-                <th>localização</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for produto in produtos  %}
+    <div class="inicio">
+        <a href="{% url 'phome'%}">inicio</a>
+    </div>
+    <div class="tabela">
+        <table border="3">
+            <thead>
                 <tr>
-                    <td>{{ produto.id }}</td>
-                    <td>{{ produto.nome_do_produto}}</td>
-                    <td>{{produto.codigo_de_barra}}</td>
-                    <td>{{ produto.quantidade_total }}</td>
-                    <td>{{ produto.localizacao }}</td>
+                    <th >ID</th>
+                    <th>Nome do produto</th>
+                    <th>Codigo de barra</th>
+                    <th>Estoque</th>
+                    <th>localização</th>
                 </tr>
-            {% empty %}
-                <tr>
-                    <td colspan="4">Nenhum produto encontrado.</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for produto in produtos  %}
+                    <tr>
+                        <td class="id">{{ produto.id }}</td>
+                        <td>{{ produto.nome_do_produto}}</td>
+                        <td>{{produto.codigo_de_barra}}</td>
+                        <td>{{ produto.quantidade_total }}</td>
+                        <td>{{ produto.localizacao }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">Nenhum produto encontrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
 </body>
 </html>

@@ -71,10 +71,11 @@ DATABASES = {
         'NAME': 'pribanco',  # Nome do banco de dados
         'USER': 'penari',    # Nome do usuário
         'PASSWORD': '1234',  # Senha correta
-        'HOST': 'localhost',
+        'HOST': 'db',        # Nome do serviço definido no docker-compose
         'PORT': '3306',
     }
 }
+
 
 
 

@@ -1,22 +1,20 @@
-# Use uma imagem base do Python
-FROM python:3.9-slim
+# Usa Python 3.11 como base
+FROM python:3.11
 
-# Defina o diretório de trabalho dentro do container
+# Define diretório de trabalho
 WORKDIR /app
 
-# Copie o arquivo requirements.txt para dentro do container
-COPY requirements.txt /app/
+# Copia arquivos do projeto
+COPY . .
 
-# Instale as dependências
+# Atualiza pip antes de instalar dependências
+RUN pip install --upgrade pip
+
+# Instala dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copie o restante do seu código para o container
-COPY . /app/
+# Expõe a porta (caso seja uma aplicação web)
+EXPOSE 8000
 
-# Defina o comando para rodar a aplicação
-CMD ["python", "app.py"]
-
-RUN pip install --no-cache-dir django && python -m django --version
-
-
-RUN pip install --no-cache-dir -r requirements.txt
+# Comando para iniciar a aplicação
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
