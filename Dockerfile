@@ -1,6 +1,12 @@
 # Usa Python 3.11 como base
 FROM python:3.11
 
+# Atualiza pacotes do sistema e instala dependências do MySQL (usando MariaDB)
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    libmariadb-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Define diretório de trabalho
 WORKDIR /app
 

@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': 'pribanco',  # Nome do banco de dados
         'USER': 'penari',    # Nome do usuário
         'PASSWORD': '1234',  # Senha correta
-        'HOST': 'db',        # Nome do serviço definido no docker-compose
+        'HOST': '127.0.0.1',# Nome do serviço definido no docker-compose
         'PORT': '3306',
     }
 }
