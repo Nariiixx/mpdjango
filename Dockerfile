@@ -1,16 +1,20 @@
-FROM python:3.11-slim
+# Usa Python 3.11 como base
+FROM python:3.11
 
-# Configuração do diretório de trabalho
+# Define diretório de trabalho
 WORKDIR /app
 
-# Copiar o arquivo de requisitos
-COPY requirements.txt /app/
+# Copia arquivos do projeto
+COPY . .
 
-# Instalar dependências
+# Atualiza pip antes de instalar dependências
+RUN pip install --upgrade pip
+
+# Instala dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar o restante dos arquivos do projeto
-COPY . /app/
+# Expõe a porta (caso seja uma aplicação web)
+EXPOSE 8000
 
-# Definir o comando para rodar o servidor Django
+# Comando para iniciar a aplicação
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
