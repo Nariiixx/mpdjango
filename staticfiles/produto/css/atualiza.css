@@ -1,0 +1,78 @@
+
+.afacad-flux-<uniquifier> {
+    font-optical-sizing: auto;
+    font-family: "Afacad Flux", serif;
+    font-style: normal;
+    font-weight: <weight>;
+    font-variation-settings:
+    "slnt" 0;
+}
+body{
+font-family: "Afacad Flux", serif;
+font-weight: 400;
+font-style: normal;
+background:#251819;
+
+}
+.inicio{
+    text-align:center;
+    margin-bottom:50px;
+}
+h1{
+    color:#73b295;
+    font-size:45px;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    margin-bottom:30px;
+}
+h2{
+    color:#73b295;
+    font-size:25px;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    margin-bottom:20px;
+}
+a{
+    text-decoration: none;
+    color: #73b295;
+    cursor: pointer;
+    transition:transform 0.3s ease;
+    padding:5px 10px;
+    margin-bottom:50px;
+}
+a:hover{
+    color:#251819;
+    border-radius:5px;
+    background-color:#73b295;
+}
+.idproduto, .nome_do_produto, .codigo_de_barra, .quantidade_total, .localizacao{
+    font-size:25px;
+    color:#73b295;
+    text-align:center;
+    margin-bottom:60px;
+    border: 2px solid #73b295; /* Cria a borda */
+    border-radius: 10px; /* Arredonda os cantos */
+}
+input{
+    margin-top:10px;
+    color:#73b295;
+    background-color:#251819;
+    border-radius:5px;
+    width: 50%; /* Largura do formulário */
+    
+}
+input::placeholder{
+    text-align:center;
+}
+input[type="submit"]:hover{
+    background-color: #73b295;
+    color:#251819;
+}
+form{
+    text-align: center;
+    width: 50%; /* Largura do formulário */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    padding: 30px; /* Espaçamento interno */
+}

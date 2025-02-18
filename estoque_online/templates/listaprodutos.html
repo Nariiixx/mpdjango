@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista de produtos</title>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/produto/css/listaprodutos.css">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'static/produto/css/listaprodutos.css' %}">
 </head>
 <body>
     <h1>lista de produtos</h1>

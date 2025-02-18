@@ -18,6 +18,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['web-production-0ae1f.up.railway.app']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -114,9 +115,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS= [os.path.join(BASE_DIR, 'templates/static')]
+STATIC_URL = '/static/'
 
+# Caminho onde os arquivos estáticos serão armazenados após o comando collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Diretórios adicionais onde o Django procurará por arquivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

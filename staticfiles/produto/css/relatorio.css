@@ -1,0 +1,44 @@
+.afacad-flux-<uniquifier> {
+    font-optical-sizing: auto;
+    font-family: "Afacad Flux", serif;
+    font-style: normal;
+    font-weight: <weight>;
+    font-variation-settings:
+    "slnt" 0;
+}
+body{
+font-family: "Afacad Flux", serif;
+font-weight: 400;
+font-style: normal;
+background:#e7c85e;
+}
+h1{
+    color:#251819;
+    font-size:40px;
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    margin-bottom:30px;
+}
+a{
+    text-decoration: none;
+    color: #251819;
+    cursor: pointer;
+    transition:transform 0.3s ease;
+    padding:5px 10px;
+    margin-bottom:50px;
+    text-align:center;   
+}
+a:hover{
+    color:#f21f26;
+    border: 2px solid #251819;
+    border-radius:5px;
+    background-color: #251819;
+}
+.inicio{
+    text-align:center;
+    margin-bottom:50px;
+}
+.div{
+    text-align:center;
+}
