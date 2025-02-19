@@ -1,11 +1,12 @@
 
 from pathlib import Path
-import os 
+import os
+from dotenv import load_dotenv
 
+# Carregar variáveis do arquivo .env
+load_dotenv()
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -67,16 +68,19 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pribanco',  # Nome do banco de dados
-        'USER': 'penari',    # Nome do usuário
-        'PASSWORD': '1234',  # Senha correta
-        'HOST': '127.0.0.1',# Nome do serviço definido no docker-compose
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME', 'pribanco'),
+        'USER': os.getenv('DB_USER', 'penari'),
+        'PASSWORD': os.getenv('DB_PASSWORD', '1234'),
+        'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
+
 
 
 
