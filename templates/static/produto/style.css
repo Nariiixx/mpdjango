@@ -1,0 +1,9 @@
+.jersey-15-regular {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: jersey-15-regular;
+}
