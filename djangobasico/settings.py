@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-pg%b%3#=eo*m)nij-9$583p-hyy71#ymdi86k6*2kt8(2a9t5e
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['web-production-0ae1f.up.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['http://estoque.up.railway.app', '127.0.0.1', 'localhost']
 
 
 
