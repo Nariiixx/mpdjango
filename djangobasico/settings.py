@@ -47,6 +47,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'djangobasico.urls'
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://estoque.up.railway.app",
+]
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
