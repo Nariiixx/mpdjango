@@ -16,8 +16,7 @@ SECRET_KEY = 'django-insecure-pg%b%3#=eo*m)nij-9$583p-hyy71#ymdi86k6*2kt8(2a9t5e
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(',')
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'estoque.up.railway.app,127.0.0.1,localhost').split(',')
 
 
 
@@ -74,19 +73,17 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-import os
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': os.getenv('DB_NAME', 'pribanco'),
+        'USER': os.getenv('DB_USER', 'penari'),
+        'PASSWORD': os.getenv('DB_PASSWORD', '@I91275085n'),
+        'HOST': os.getenv('DB_HOST', 'containers-us-west-203.railway.app'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
-
 
 
 
