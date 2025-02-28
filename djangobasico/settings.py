@@ -76,20 +76,28 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 
 import os
 
+import os
+import environ
+
+# Inicializar o environ
+env = environ.Env()
+environ.Env.read_env()  # Carrega as variáveis do arquivo .env
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME', 'pribanco'),  # Nome do banco
-        'USER': os.getenv('DB_USER', 'penari'),  # Usuário do banco
-        'PASSWORD': os.getenv('DB_PASSWORD', '@I91275085n'),  # Senha do banco
-        'HOST': os.getenv('DB_HOST', 'shortline.proxy.rlwy.net'),  # Host do proxy do Railway
-        'PORT': os.getenv('DB_PORT', '46448'),  # Porta do proxy do Railway
+        'NAME': env('DB_NAME', default='pribanco'),
+        'USER': env('DB_USER', default='penari'),
+        'PASSWORD': env('DB_PASSWORD', default='@I91275085n'),
+        'HOST': env('DB_HOST', default='shortline.proxy.rlwy.net'),
+        'PORT': env('DB_PORT', default='46448'),
     }
 }
-git status
-git add .
-git commit -m "Configuração do banco de dados"
-git push origin main
+
+#git status
+#git add .
+#git commit -m "Configuração do banco de dados"
+#git push origin main
 
 
 #python manage.py migrate
