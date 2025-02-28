@@ -74,18 +74,25 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME', 'pribanco'),
-        'USER': os.getenv('DB_USER', 'penari'),
-        'PASSWORD': os.getenv('DB_PASSWORD', '@I91275085n'),
-        'HOST': os.getenv('DB_HOST', 'containers-us-west-203.railway.app'),
-        'PORT': os.getenv('DB_PORT', '3306'),
+        'NAME': os.getenv('DB_NAME', 'pribanco'),  # Nome do banco
+        'USER': os.getenv('DB_USER', 'penari'),  # Usuário do banco
+        'PASSWORD': os.getenv('DB_PASSWORD', '@I91275085n'),  # Senha do banco
+        'HOST': os.getenv('DB_HOST', 'shortline.proxy.rlwy.net'),  # Host do proxy do Railway
+        'PORT': os.getenv('DB_PORT', '46448'),  # Porta do proxy do Railway
     }
 }
+git status
+git add .
+git commit -m "Configuração do banco de dados"
+git push origin main
 
 
+#python manage.py migrate
 
 
 
