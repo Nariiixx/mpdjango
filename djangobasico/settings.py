@@ -1,10 +1,11 @@
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+import environ
+
 
 # Carregar variáveis do arquivo .env
-load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -73,11 +74,6 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
-import os
-
-import os
-import environ
 
 # Inicializar o environ
 env = environ.Env()
