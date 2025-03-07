@@ -74,29 +74,21 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 
 
 from dotenv import load_dotenv
-from urllib.parse import urlparse
 
-load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env
+# Apenas para desenvolvimento local
+if os.path.exists('.env'):
+    load_dotenv()
 
-
-DATABASE_URL = os.getenv('DATABASE_URL')
-
-if DATABASE_URL:
-    parsed_db_url = urlparse(DATABASE_URL)
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': parsed_db_url.path[1:],  # Remove a barra inicial ("/")
-            'USER': parsed_db_url.username,
-            'PASSWORD': parsed_db_url.password,
-            'HOST': parsed_db_url.hostname,
-            'PORT': parsed_db_url.port,
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
-else:
-    raise ValueError("DATABASE_URL não está definida nas variáveis de ambiente")
-
+}
 
 
 #git status
