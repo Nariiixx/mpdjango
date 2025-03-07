@@ -1,8 +1,6 @@
 
 from pathlib import Path
 import os
-import environ
-
 
 # Carregar variáveis do arquivo .env
 
@@ -17,7 +15,7 @@ SECRET_KEY = 'django-insecure-pg%b%3#=eo*m)nij-9$583p-hyy71#ymdi86k6*2kt8(2a9t5e
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'estoque.up.railway.app,127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'estoque.up.railway.app,127.0.0.1,localhost', 'localhost').split(',')
 
 
 
@@ -75,18 +73,14 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-# Inicializar o environ
-env = environ.Env()
-environ.Env.read_env()  # Carrega as variáveis do arquivo .env
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DB_NAME', default='pribanco'),
-        'USER': env('DB_USER', default='penari'),
-        'PASSWORD': env('DB_PASSWORD', default='@I91275085n'),
-        'HOST': env('DB_HOST', default='shortline.proxy.rlwy.net'),
-        'PORT': env('DB_PORT', default='46448'),
+        'NAME': 'pribanco',
+        'USER': 'penari',
+        'PASSWORD':'@I91275085n',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
