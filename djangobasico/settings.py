@@ -73,20 +73,23 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-from dotenv import load_dotenv
+from urllib.parse import urlparse
 
-# Apenas para desenvolvimento local
-if os.path.exists('.env'):
-    load_dotenv()
+# Pega a URL de conexão com o banco de dados a partir das variáveis de ambiente
+DATABASE_URL = os.getenv('DATABASE_URL')
 
+# Analisa a URL para extrair as informações necessárias
+parsed_db_url = urlparse(DATABASE_URL)
+
+# Configuração do banco de dados no Django usando os dados extraídos da URL
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': parsed_db_url.path[1:],  # Remove a barra inicial ("/")
+        'USER': parsed_db_url.username,
+        'PASSWORD': parsed_db_url.password,
+        'HOST': parsed_db_url.hostname,
+        'PORT': parsed_db_url.port,
     }
 }
 
