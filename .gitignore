@@ -13,3 +13,4 @@ Thumbs.db
 
 # Ignorar arquivos de log
 *.log
+.env
