@@ -71,14 +71,6 @@ WSGI_APPLICATION = 'djangobasico.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-
-from dotenv import load_dotenv
-
-# Apenas para desenvolvimento local
-if os.path.exists('.env'):
-    load_dotenv()
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -147,7 +139,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Diretórios adicionais onde o Django procura arquivos estáticos
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates','static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
