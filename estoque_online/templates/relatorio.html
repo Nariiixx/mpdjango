@@ -9,26 +9,51 @@
     <link rel="stylesheet" type="text/css" href="{% static 'produto/css/relatorio.css' %}">
 </head>
 <body>
-    <h1>Relatório de Estoque</h1>
-    <div class="inicio">
-        <a href="{% url 'phome'%}">inicio</a>
-    </div>
-    <div class="div">
-    <h3>Produto com Mais Estoque</h2>
-    {% if quantidademaior %}
-        <p>Nome: {{ quantidademaior.nome_do_produto }}</p>
-        <p>Quantidade em Estoque: {{ quantidademaior.quantidade_total }}</p>
-    {% else %}
-        <p>Não há produtos no estoque.</p>
-    {% endif %}
+    <a href="{% url 'phome'%}">inicio</a>
+    <h2>Total de produtos cadastrados: <span id="totalItens"></span></h2>
+    <h2>Quantidade total no estoque: <span id="totalEstoque"></span></h2>
+    
+    <canvas id="graficoProdutos" width="600" height="300"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    let grafico = null;
+    
+    async function atualizarDashboard() {
+        const response = await fetch('/api/dashboard/');
+        const data = await response.json();
+    
+        // Atualiza os totais
+        document.getElementById('totalItens').textContent = data.total_itens;
+        document.getElementById('totalEstoque').textContent = data.total_estoque;
+    
+        const labels = data.produtos.map(p => p.nome_do_produto);
+        const valores = data.produtos.map(p => parseInt(p.quantidade_total));
+    
+        if (!grafico) {
+            const ctx = document.getElementById('graficoProdutos');
+            grafico = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Quantidade por Produto',
+                        data: valores,
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    }]
+                }
+            });
+        } else {
+            grafico.data.labels = labels;
+            grafico.data.datasets[0].data = valores;
+            grafico.update();
+        }
+    }
+    
+    setInterval(atualizarDashboard, 5000); // atualiza a cada 5 segundos
+    atualizarDashboard(); // chamada inicial
+    </script>
+    
+    <a href="{% url 'exportar_excel' %}">Baixar Excel</a>
 
-    <h3>Produto com Menos Estoque</h2>
-    {% if quantidademenor %}
-        <p>Nome: {{ quantidademenor.nome_do_produto }}</p>
-        <p>Quantidade em Estoque: {{ quantidademenor.quantidade_total }}</p>
-    {% else %}
-        <p>Não há produtos no estoque.</p>
-    {% endif %}
-    </div>
 </body>
 </html>

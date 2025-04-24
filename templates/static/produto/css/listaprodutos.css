@@ -60,3 +60,10 @@ td{
 .id{
     background-color:#ff8570;
 }
+.botao{
+    padding: 10px 20px; 
+    background-color: #f21f26; 
+    color: #251819;
+    border: none;
+    border-radius: 5px;
+}

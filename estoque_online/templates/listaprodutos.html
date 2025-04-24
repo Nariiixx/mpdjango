@@ -41,5 +41,13 @@
             </tbody>
         </table>
     </div> 
+    <div>
+        <form action="{% url 'deletar_produto' %}" method="get" onsubmit="return confirm('Tem certeza que deseja deletar os produtos duplicados?');">
+            <button type="submit" class="botao" >
+                Deletar Duplicatas
+            </button>
+        </form>
+        
+    </div>               
 </body>
 </html>
